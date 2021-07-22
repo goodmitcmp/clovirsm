@@ -35,7 +35,7 @@ function New-LocalUser
         [string]
         $password
     )
-    net user $userName $password /ADD
+    New-LocalUser -Name $userName -NoPassword
     <#$system = [ADSI]"WinNT://$env:COMPUTERNAME";
     $user = $system.Create("user",$userName);
     $user.SetPassword($password);
