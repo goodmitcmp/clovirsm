@@ -355,6 +355,7 @@ if ($args.Count -eq 2) {
 Create-NewProfile -Username $args[0] -Password $args[1]
 }
 else{
+echo "$args.Count"
 New-LocalUser -Name $args[0] -NoPassword
 #Create-NewProfile -Username $args[0] -Password $args[1]  -SshKey $args[2]
 }
