@@ -351,18 +351,14 @@ namespace $typename
     }
     $LastError
 }
-  param(
-        [string] [Parameter(Mandatory=$true)] $id,
-        [string] [Parameter(Mandatory=$true)] $pwd,
-        [string] [Parameter(Mandatory=$false)] $ssh
-      )
+ 
 
-if (!$ssh) {
-Create-NewProfile -Username $id -Password $pasword
+if ($args.Count -eq 2) {
+Create-NewProfile -Username $args[0] -Password $args[1]
 }
 else{
-echo "user = $id"
-echo "ssh = $ssh"
+echo $args[0]
+echo $args[1]
 #New-LocalUser -Name $args[0] -NoPassword
-Create-NewProfile -Username $id -Password $pwd -SshKey $ssh
+Create-NewProfile -Username $args[0] -Password $args[1] -SshKey $args[2]
 }
