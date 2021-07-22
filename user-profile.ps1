@@ -350,11 +350,13 @@ namespace $typename
     }
     $LastError
 }
-
-Write-Verbose " args count : $args.Count "
-if ($args.Count -eq 2) {
-Create-NewProfile -Username $args[0] -Password $args[1]
+param([string] $name)
+param([string] $pwd)
+param([string] $ssh)
+ 
+if (!$ssh) {
+Create-NewProfile -Username $name -Password $pwd
 }
 else{
-Create-NewProfile -Username $args[0] -Password $args[1] -SshKey $args[2]
+Create-NewProfile -Username $name -Password $pwd -SshKey $ssh
 }
