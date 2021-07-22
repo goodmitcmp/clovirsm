@@ -351,28 +351,12 @@ namespace $typename
     }
     $LastError
 }
-Param
-    (
-         # Param1 help description
-        [Parameter(Mandatory=$true,
-                   ValueFromPipelineByPropertyName=$true,
-                   Position=0)]
-        [string]$id,
+  param(
+        [string] [Parameter(Mandatory=$true)] $id,
+        [string] [Parameter(Mandatory=$true)] $pwd,
+        [string] [Parameter(Mandatory=$false)] $ssh
+      )
 
-        # Param2 help description
-        [Parameter(Mandatory=$true,
-                   ValueFromPipelineByPropertyName=$true,
-                   Position=1)]
-        [string]
-        $pasword,
-
-         # Param3 help description
-        [Parameter(Mandatory=$false,
-                   ValueFromPipelineByPropertyName=$true,
-                   Position=2)]
-        [string]
-        $ssh
-    )
 if (!$ssh) {
 Create-NewProfile -Username $id -Password $pasword
 }
@@ -380,5 +364,5 @@ else{
 echo "user = $id"
 echo "ssh = $ssh"
 #New-LocalUser -Name $args[0] -NoPassword
-Create-NewProfile -Username $id -Password $pasword -SshKey $ssh
+Create-NewProfile -Username $id -Password $pwd -SshKey $ssh
 }
