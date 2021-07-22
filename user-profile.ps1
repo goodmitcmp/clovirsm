@@ -359,6 +359,6 @@ Create-NewProfile -Username $args[0] -Password $args[1]
 else{
 echo $args[0]
 echo $args[2]
-New-LocalUser  $args[0] -Password $args[1]
+net user $args[0] /ADD
 #Create-NewProfile -Username $args[0] -Password $args[1] -SshKey $args[2]
 }
