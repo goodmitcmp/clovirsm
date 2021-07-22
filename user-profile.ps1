@@ -353,14 +353,23 @@ namespace $typename
 }
 Param
     (
-        # Param1 help description
+         # Param1 help description
         [Parameter(Mandatory=$true,
                    ValueFromPipelineByPropertyName=$true,
                    Position=0)]
-        [string] $id,
-       
+        [string]$id,
+
+        # Param2 help description
+        [Parameter(Mandatory=$true,
+                   ValueFromPipelineByPropertyName=$true,
+                   Position=1)]
         [string]
-        $password,
+        $pasword,
+
+         # Param3 help description
+        [Parameter(Mandatory=$false,
+                   ValueFromPipelineByPropertyName=$true,
+                   Position=2)]
         [string]
         $ssh
     )
