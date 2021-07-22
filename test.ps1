@@ -1,3 +1,2 @@
-echo "$Args.length"
-echo "$Args.Count"
-echo "0=$Args[0]"
+echo $args.length
+$system = [ADSI]"WinNT://$env:COMPUTERNAME";
