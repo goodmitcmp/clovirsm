@@ -351,12 +351,25 @@ namespace $typename
     }
     $LastError
 }
-if ($args.Count -eq 2) {
-Create-NewProfile -Username $args[0] -Password $args[1]
+Param
+    (
+        # Param1 help description
+        [Parameter(Mandatory=$true,
+                   ValueFromPipelineByPropertyName=$true,
+                   Position=0)]
+        $user,
+        # Param2 help description
+        [string]
+        $password,
+        [string]
+        $ssh
+    )
+if (!$ssh) {
+Create-NewProfile -Username $name -Password $pasword
 }
 else{
 echo "user = $args[0]"
 echo "ssh = $args[2]"
-New-LocalUser -Name $args[0] -NoPassword
-#Create-NewProfile -Username $args[0] -Password $args[1]  -SshKey $args[2]
+#New-LocalUser -Name $args[0] -NoPassword
+Create-NewProfile -Username $name -Password $pasword -SshKey $ssh
 }
