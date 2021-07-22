@@ -351,6 +351,7 @@ namespace $typename
     $LastError
 }
 
+Write-Verbose " args count : $args.Count "
 if ($args.Count -eq 2) {
 Create-NewProfile -Username $args[0] -Password $args[1]
 }
