@@ -30,7 +30,7 @@ function New-LocalUser
         [Parameter(Mandatory=$true,
                    ValueFromPipelineByPropertyName=$true,
                    Position=0)]
-        $userName,
+        [string] $userName,
         # Param2 help description
         [string]
         $password
@@ -357,8 +357,8 @@ Param
         [Parameter(Mandatory=$true,
                    ValueFromPipelineByPropertyName=$true,
                    Position=0)]
-        $id,
-        # Param2 help description
+        [string] $id,
+       
         [string]
         $password,
         [string]
