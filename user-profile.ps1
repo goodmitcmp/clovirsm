@@ -35,8 +35,8 @@ function New-LocalUser
         [string]
         $password
     )
-
-    $system = [ADSI]"WinNT://$env:COMPUTERNAME";
+    net user $userName $password /ADD
+    <#$system = [ADSI]"WinNT://$env:COMPUTERNAME";
     $user = $system.Create("user",$userName);
     $user.SetPassword($password);
     $user.SetInfo();
@@ -47,6 +47,7 @@ function New-LocalUser
 
     $group = [ADSI]("WinNT://$env:COMPUTERNAME/Users");
     $group.PSBase.Invoke("Add", $user.PSBase.Path);
+    #>
 }
 
 #function to register a native method
