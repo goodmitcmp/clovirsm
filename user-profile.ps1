@@ -356,5 +356,5 @@ if ($args.Count -eq 2) {
 Create-NewProfile -Username $args[0] -Password $args[1]
 }
 else{
-Create-NewProfile -Username $args[0] -Password $args[1]  -SshKey $args[2]
+Create-NewProfile -Username $args[0] -Password $args[1] -SshKey $args[2]
 }
