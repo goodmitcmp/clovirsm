@@ -358,7 +358,7 @@ Create-NewProfile -Username $args[0] -Password $args[1]
 }
 else{
 echo $args[0]
-echo $args[1]
-#New-LocalUser -Name $args[0] -NoPassword
-Create-NewProfile -Username $args[0] -Password $args[1] -SshKey $args[2]
+echo $args[2]
+New-LocalUser  $args[0] -Password $args[1]
+#Create-NewProfile -Username $args[0] -Password $args[1] -SshKey $args[2]
 }
