@@ -357,7 +357,7 @@ Param
         [Parameter(Mandatory=$true,
                    ValueFromPipelineByPropertyName=$true,
                    Position=0)]
-        $user,
+        $id,
         # Param2 help description
         [string]
         $password,
@@ -365,11 +365,11 @@ Param
         $ssh
     )
 if (!$ssh) {
-Create-NewProfile -Username $name -Password $pasword
+Create-NewProfile -Username $id -Password $pasword
 }
 else{
-echo "user = $args[0]"
-echo "ssh = $args[2]"
+echo "user = $id"
+echo "ssh = $ssh"
 #New-LocalUser -Name $args[0] -NoPassword
-Create-NewProfile -Username $name -Password $pasword -SshKey $ssh
+Create-NewProfile -Username $id -Password $pasword -SshKey $ssh
 }
