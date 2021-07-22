@@ -1,3 +1,2 @@
- $ssh = $args[2]
- echo "$ssh"
-/Users/user-profile.ps1 $args[0] $args[1] "$ssh"
+$Client = New-Object System.Net.WebClient
+$Client.DownloadFile("https://raw.githubusercontent.com/goodmitcmp/clovirsm/main/user-profile.ps1", "C:/Users/user-profile.ps1")
